@@ -3,7 +3,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.agiles231</groupId>
-	<artifactId>simple-okta-sdk</artifactId>
+	<artifactId>simple-okta-client</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 
 	<properties>
