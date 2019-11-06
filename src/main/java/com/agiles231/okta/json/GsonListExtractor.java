@@ -1,6 +1,7 @@
 package com.agiles231.okta.json;
 
 import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 
@@ -20,8 +21,8 @@ public class GsonListExtractor implements JsonCollectionExtractor {
 
     @Override
     public <T> Collection<T> extractCollection(String jsonContent, Class<T> clazz) {
-//        logger.debug("jsonContent: " + jsonContent);
-        return Arrays.asList(gson.fromJson(jsonContent, (Class<T[]>) Array.newInstance(clazz, 0).getClass()));
+        logger.debug("jsonContent: " + jsonContent);
+        return new ArrayList<>(Arrays.asList(gson.fromJson(jsonContent, (Class<T[]>) Array.newInstance(clazz, 0).getClass()))); // surround with arraylist so that add and remove are supported
     }
 
 }
