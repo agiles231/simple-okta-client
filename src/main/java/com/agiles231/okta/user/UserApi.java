@@ -59,7 +59,7 @@ public interface UserApi {
 
     public void resetPassword(String id) throws UserNotFoundException, IllegalStateException;
 
-    public URI resetPasswordWithEmail(String id) throws UserNotFoundException, IllegalStateException;
+    public URI resetPasswordWithoutEmail(String id) throws UserNotFoundException, IllegalStateException;
 
     public User expirePassword(String id) throws UserNotFoundException, IllegalStateException;
 

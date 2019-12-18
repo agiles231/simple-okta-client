@@ -354,7 +354,7 @@ public class UserApiHttpClient implements UserApi {
     }
 
     @Override
-    public URI resetPasswordWithEmail(String id) throws UserNotFoundException, IllegalStateException {
+    public URI resetPasswordWithoutEmail(String id) throws UserNotFoundException, IllegalStateException {
         List<NameValuePair> params = new LinkedList<>();
         params.add(new BasicNameValuePair("sendEmail", "true"));
         try {

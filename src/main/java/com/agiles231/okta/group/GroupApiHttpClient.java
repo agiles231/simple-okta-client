@@ -32,7 +32,7 @@ public class GroupApiHttpClient implements GroupApi {
     private final static String GET_GROUPS_PATH = "/groups";
     private final static String UPDATE_GROUP_PATH = "/groups/{id}";
     private final static String GET_GROUP_MEMBERS_PATH = "/groups/{id}";
-    private final static String ADD_USER_TO_GROUP_PATH = "/groups/{id}";
+    private final static String ADD_USER_TO_GROUP_PATH = "/groups/{groupId}/users/{userId}";
 
     private final OktaHttpClient client;
     private final HttpEntityCreator entityCreator;
@@ -208,7 +208,7 @@ public class GroupApiHttpClient implements GroupApi {
     @Override
     public void addUserToGroup(String groupId, String userId) throws GroupOperationFailedException {
         try {
-            client.executeHttpPut(ADD_USER_TO_GROUP_PATH.replace("{groupId}", groupId).replace("userId", userId));
+            client.executeHttpPut(ADD_USER_TO_GROUP_PATH.replace("{groupId}", groupId).replace("{userId}", userId));
         } catch (IOException | URISyntaxException e) {
             throw new GroupOperationFailedException(e);
         }
